@@ -2,6 +2,35 @@
 #include<iostream>
 using namespace std;
 
+char* Name(char arr2[], char* arr) {
+	char arr1[13] = { "d:\\Valeria\\" };
+
+	int r = 0, index;
+
+	for (int i = 0; ; i++) {
+		if (arr1[i] != '\0') {
+			arr[i] = arr1[i];
+		}
+		else {
+			index = i;
+			for (int j = index; ; j++) {
+				arr[i] = arr2[r]; r++; i++;
+				if (arr2[r] == '\0') {
+					arr[i] = '.';
+					arr[i + 1] = 't';
+					arr[i + 2] = 'x';
+					arr[i + 3] = 't';
+					arr[i + 4] = '\0';
+					break;
+				}
+			}
+			break;
+		}
+	}
+
+	return arr;
+}
+
 void FullMassive(FILE* fres, int mount) {
 	char name[20]; FILE* file; char arr[50];
 
