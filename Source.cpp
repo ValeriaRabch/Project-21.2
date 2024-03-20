@@ -31,6 +31,22 @@ char* Name(char arr2[], char* arr) {
 	return arr;
 }
 
+int Line(char* link) {
+	FILE* file;
+	file = fopen(link, "r");
+	char c = fgetc(file);
+	int count = 1;
+
+	while (c != EOF) {
+		if (c == '\n') {
+			count++;
+		}
+	}
+
+	fclose(file);
+	return count;
+}
+
 void FullMassive(FILE* fres, int mount) {
 	char name[20]; FILE* file; char arr[50];
 
