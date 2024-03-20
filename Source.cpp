@@ -47,6 +47,22 @@ int Line(char* link) {
 	return count;
 }
 
+void FullFile(FILE* f, FILE* fres) {
+	char arr2[50];
+	while (true) {
+
+		cin.getline(arr2, 50);
+		if (strcmp(arr2, "0") == 0) {
+			fprintf(fres, "\n");
+			break;
+		}
+		fprintf(f, arr2);
+		fprintf(f, "\n");
+		fprintf(fres, arr2);
+		fprintf(fres, "\n");
+	}
+}
+
 void FullMassive(FILE* fres, int mount) {
 	char name[20]; FILE* file; char arr[50];
 
